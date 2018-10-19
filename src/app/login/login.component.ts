@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { MatButtonModule, MatCheckboxModule, MatInputModule, MatCardModule } from '@angular/material';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { Login } from './login';
+import { LoginService } from './login.service';
+
 
 @Component({
   selector: 'app-login',
@@ -8,9 +13,19 @@ import { MatButtonModule, MatCheckboxModule, MatInputModule, MatCardModule } fro
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  user: Login;
+
+  constructor(
+    public fb: FormBuilder,
+    private loginService: LoginService,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
+  }
+
+  redirect() {
+  	this.router.navigate(['./home']);
   }
 
 }
