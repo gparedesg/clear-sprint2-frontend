@@ -1,0 +1,39 @@
+.main-nav {
+	position: sticky;
+	background: hsla(0,0%,100%,.95);
+	border-bottom: 1px solid #ececec;
+	top: 0;
+	right: 0;
+	bottom: auto;
+	left: 0;
+	z-index: 10;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: 0 auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding: 15px 38px;
+	margin-bottom: 50px;
+	.navbar-buttons {
+		font-weight: 700;
+		font-size: 12px;
+		letter-spacing: 1.85px;
+		text-align: center;
+		margin-left: 50px;
+	}
+	div {
+		margin: 0;
+		margin-right: auto;
+		height: 100%;
+		vertical-align: middle;
+		img {
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			height: 100%;
+			vertical-align: middle;
+		}
+	}
+}
