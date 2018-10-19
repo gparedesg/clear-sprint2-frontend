@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MatButtonModule, MatCheckboxModule, MatInputModule, MatCardModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatInputModule, MatCardModule, MatListModule } from '@angular/material';
 import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
@@ -26,6 +26,7 @@ const routes: Routes = [
     MatCheckboxModule,
     MatInputModule,
     MatCardModule,
+    MatListModule,
     CommonModule
   ],
   exports: [
@@ -34,6 +35,7 @@ const routes: Routes = [
     MatCheckboxModule,
     MatInputModule,
     MatCardModule,
+    MatListModule
   ]
 })
 export class AppRoutingModule { }

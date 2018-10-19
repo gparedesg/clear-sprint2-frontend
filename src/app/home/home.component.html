@@ -7,11 +7,20 @@
 	<div class="col-sm-4">
 		<mat-card>
 			<h1>List of Contracts</h1>
-		      <ol>
-		        <li *ngFor="let contract of contracts">
-		          {{contract.data}}
-		        </li>
-		      </ol>
+		      <mat-list>
+		        <mat-list-item *ngFor="let contract of contracts">
+		          <button
+		          [ngClass]="{
+		          	  'warning' : contract.status == 'PENDING',
+			          'error': contract.status == 'ERROR',
+			          'complete': contract.status == 'COMPLETE'
+			      }"
+		          (click)="getContract()"
+		          mat-button>
+		          {{contract.data | slice:0:70 }} ...
+		      </button>
+		        </mat-list-item>
+		      </mat-list>
 		</mat-card>
 	</div>
 	<div class="col-sm-4">

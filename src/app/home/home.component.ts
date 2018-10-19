@@ -32,5 +32,9 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  getContract(){
+    
+  }
+
 
 }
