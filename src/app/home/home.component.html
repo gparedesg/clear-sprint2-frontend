@@ -1,31 +1,48 @@
 <div class="row center-xs">
 	<div class="col-sm-8">
-		<button (click)="getContracts()" mat-raised-button color="primary">Get Contracts</button>
+		<mat-toolbar>
+		<mat-toolbar-row>
+			<button
+				(click)="getContracts()"
+				mat-raised-button color="primary">
+				Get Contracts
+			</button>
+			<button mat-button>Fake Button</button>
+			<button mat-button>More Menu Stuff</button>
+		</mat-toolbar-row>
+		</mat-toolbar>
 	</div>
 </div>
 <div class="row center-xs">
 	<div class="col-sm-4">
 		<mat-card>
 			<h1>List of Contracts</h1>
-		      <mat-list>
-		        <mat-list-item *ngFor="let contract of contracts">
-		          <button
-		          [ngClass]="{
-		          	  'warning' : contract.status == 'PENDING',
-			          'error': contract.status == 'ERROR',
-			          'complete': contract.status == 'COMPLETE'
-			      }"
-		          (click)="getContract()"
-		          mat-button>
-		          {{contract.data | slice:0:70 }} ...
-		      </button>
-		        </mat-list-item>
-		      </mat-list>
+				<mat-list>
+					<mat-list-item *ngFor="let contract of contracts">
+					<button
+					[ngClass]="{
+						'warning' : contract.status == 'PENDING',
+						'error': contract.status == 'ERROR',
+						'complete': contract.status == 'COMPLETE'
+					}"
+					(click)="getPerson(contract.owner)"
+					mat-button>
+					{{contract.data | slice:0:50 }} ...
+					</button>
+					</mat-list-item>
+				</mat-list>
 		</mat-card>
 	</div>
 	<div class="col-sm-4">
 		<mat-card>
 			<h1>Person</h1>
+			  <mat-card-header>
+			    <div mat-card-avatar class="header-image">
+			    	<img src="http://placekitten.com/50/50" alt="Cute Kitty" *ngIf="showKitty">
+			    </div>
+			    <mat-card-title>{{person.name}}</mat-card-title>
+			    <mat-card-subtitle>{{person.email}} </mat-card-subtitle>
+			  </mat-card-header>
 		</mat-card>
 	</div>
 </div>
