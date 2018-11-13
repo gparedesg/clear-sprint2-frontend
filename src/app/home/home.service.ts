@@ -11,6 +11,7 @@ import { environment } from '../../environments/environment';
 })
 export class HomeService {
   private contractsUrl = `${environment.endpoint}/contracts/`;
+  private personUrl = `${environment.endpoint}/users/`;
   private handleError(error: any): Promise<any> {
     return Promise.reject(error.json().errors);
   }
@@ -24,6 +25,14 @@ export class HomeService {
   getContracts(): Promise<any> {
     return this.http
       .get(this.contractsUrl)
+      .toPromise()
+      .then((res: Response) => res.json())
+      .catch(this.handleError);
+  }
+
+  getPerson(url): Promise<any> {
+    return this.http
+      .get(url)
       .toPromise()
       .then((res: Response) => res.json())
       .catch(this.handleError);
